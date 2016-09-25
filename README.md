@@ -1,5 +1,5 @@
 # collectd-freeradius
-Collectd [python plugin[(https://collectd.org/wiki/index.php/Plugin:Python) to gather freeradius stats
+Collectd [python plugin](https://collectd.org/wiki/index.php/Plugin:Python) to gather freeradius stats
 
 
 Enable freeradius stats: http://wiki.freeradius.org/config/Status
