@@ -69,6 +69,10 @@ def reader():
         dispatch_value(type, value)
 
 
+def init():
+    signal.signal(signal.SIGCHLD, signal.SIG_DFL)
+
+
 def dispatch_value(val_type, value, metric_type='gauge'):
     val = collectd.Values(plugin='freeradius')
     val.type = metric_type
@@ -82,6 +86,6 @@ if __name__ == '__main__':
 else:
     import collectd
     # http://giovannitorres.me/using-collectd-python-and-graphite-to-graph-slurm-partitions.html
-    collectd.register_init(signal.signal(signal.SIGCHLD, signal.SIG_DFL))
+    collectd.register_init(init)
     collectd.register_config(configer)
     collectd.register_read(reader)
